@@ -399,7 +399,7 @@ public class StickyListHeadersListView extends ListView {
 				if (viewToWatch == null
 						|| (!viewToWatchIsFooter && !((WrapperView) viewToWatch)
 								.hasHeader())
-						|| ((childIsFooter || ((WrapperView) child).hasHeader()) && childDistance < watchingChildDistance)) {
+						|| ((childIsFooter || ((child instanceof WrapperView) && ((WrapperView) child).hasHeader())) && childDistance < watchingChildDistance)) {
 					viewToWatch = child;
 					viewToWatchIsFooter = childIsFooter;
 					watchingChildDistance = childDistance;
