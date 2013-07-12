@@ -343,7 +343,7 @@ public class StickyListHeadersListView extends ListView {
 				- getPaddingRight(), mHeader.getMeasuredHeight());
 	}
 
-	private int getHeaderHeight() {
+	public int getHeaderHeight() {
 		return mHeader == null ? 0 : mHeader.getMeasuredHeight();
 	}
 
