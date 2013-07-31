@@ -12,9 +12,9 @@ import android.view.ViewParent;
  * 
  * the view that wrapps a divider header and a normal list item. The listview sees this as 1 item
  * 
- * @author Emil Sjölander
+ * @author Emil Sj��lander
  */
-class WrapperView extends ViewGroup {
+public class WrapperView extends ViewGroup {
 
 	View mItem;
 	Drawable mDivider;
@@ -24,6 +24,10 @@ class WrapperView extends ViewGroup {
 
 	public WrapperView(Context c) {
 		super(c);
+	}
+	
+	public View getOriginalView() {
+	    return mItem;
 	}
 
 	void update(View item, View header, Drawable divider, int dividerHeight) {
