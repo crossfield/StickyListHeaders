@@ -21,7 +21,7 @@ import android.widget.ListView;
 import android.widget.SectionIndexer;
 
 /**
- * @author Emil Sjölander
+ * @author Emil Sj��lander
  */
 public class StickyListHeadersListView extends ListView {
 
@@ -397,7 +397,7 @@ public class StickyListHeadersListView extends ListView {
 				}
 
 				if (viewToWatch == null
-						|| (!viewToWatchIsFooter && !((WrapperView) viewToWatch)
+						|| (!viewToWatchIsFooter && viewToWatch instanceof WrapperView && !((WrapperView) viewToWatch)
 								.hasHeader())
 						|| ((childIsFooter || ((child instanceof WrapperView) && ((WrapperView) child).hasHeader())) && childDistance < watchingChildDistance)) {
 					viewToWatch = child;
@@ -408,8 +408,8 @@ public class StickyListHeadersListView extends ListView {
 
 			final int headerHeight = getHeaderHeight();
 			if (viewToWatch != null
-					&& (viewToWatchIsFooter || ((WrapperView) viewToWatch)
-							.hasHeader())) {
+					&& (viewToWatchIsFooter || (viewToWatch instanceof WrapperView && ((WrapperView) viewToWatch)
+							.hasHeader()))) {
 				if (firstVisibleItem == listViewHeaderCount
 						&& super.getChildAt(0).getTop() > 0
 						&& !mClippingToPadding) {
